@@ -36,4 +36,39 @@ public class Domicilio {
         return id + ", " + calle + ", altura: " + numero + ", en: " + localidad + ", " + provincia;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public String getLocalidad() {
+        return localidad;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public void setLocalidad(String localidad) {
+        this.localidad = localidad;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
 }
