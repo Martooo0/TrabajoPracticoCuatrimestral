@@ -85,7 +85,5 @@ public class Main {
 
         turno2.cancelar();
         System.out.println("Turno 2 cancelado");
-        System.out.println(turno2);
-
     }
 }

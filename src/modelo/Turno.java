@@ -26,33 +26,31 @@ public class Turno {
 
     // Métodos para modificación (set) de datos del Turno.
 
-    // ...
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
+    public void setOdontologo(Odontologo odontologo) {
+        this.odontologo = odontologo;
+    }
+
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setHora(LocalTime hora) {
+        this.hora = hora;
+    }
+
+    public void setEstado(EstadoTurno estado) {
+        this.estado = estado;
+    }
 
     // Métodos para obtención (get) de datos del Turno.
-
-    // ...
-
-    // Aca usamos los métodos para mostrar el flujo que va a ir teniendo el turno
-
-    public void confirmar() {
-        this.estado = EstadoTurno.CONFIRMADO;
-    }
-
-    public void completar() {
-        this.estado = EstadoTurno.COMPLETADO;
-    }
-
-    public void cancelar() {
-        this.estado = EstadoTurno.CANCELADO;
-    }
-
-    public String toString() {
-        return "Turno: " + id +
-                ", paciente: " + paciente.getNombreCompleto() + // Solo traemos el nombre completo del Paciente
-                ", odontólogo: " + odontologo.getNombreCompleto() +
-                ", fecha del turno: " + fecha + ", " + hora + " hs" +
-                ". Estado: " + estado;
-    }
 
     public Long getId() {
         return id;
@@ -78,27 +76,25 @@ public class Turno {
         return estado;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    // Aca usamos los métodos para mostrar el flujo que va a ir teniendo el turno
+
+    public void confirmar() {
+        this.estado = EstadoTurno.CONFIRMADO;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void completar() {
+        this.estado = EstadoTurno.COMPLETADO;
     }
 
-    public void setOdontologo(Odontologo odontologo) {
-        this.odontologo = odontologo;
+    public void cancelar() {
+        this.estado = EstadoTurno.CANCELADO;
     }
 
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
-    public void setHora(LocalTime hora) {
-        this.hora = hora;
-    }
-
-    public void setEstado(EstadoTurno estado) {
-        this.estado = estado;
+    public String toString() {
+        return "Turno: " + id +
+                ", paciente: " + paciente.getNombreCompleto() + // Solo traemos el nombre completo del Paciente
+                ", odontólogo: " + odontologo.getNombreCompleto() +
+                ", fecha del turno: " + fecha + ", " + hora + " hs" +
+                ". Estado: " + estado;
     }
 }

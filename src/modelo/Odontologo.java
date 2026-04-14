@@ -17,23 +17,25 @@ public class Odontologo {
 
     // Métodos para modificación de datos del Odontólogo.
 
-    // ...
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
 
     // Métodos para obtención de datos del Odontólogo.
 
-    // ...
-
-    public String getNombreCompleto() {
-        return nombre + " " + apellido;
-    }
-
-    public String toString() {
-        return "Odontólogo: " + id +
-                ", nombre: " + getNombreCompleto() +
-                ", matricula: " + matricula;
-    }
-
-    public Long getId() {
+        public Long getId() {
         return id;
     }
 
@@ -49,19 +51,13 @@ public class Odontologo {
         return matricula;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getNombreCompleto() {
+        return nombre + " " + apellido;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setMatricula(String matricula) {
-        this.matricula = matricula;
+    public String toString() {
+        return "Odontólogo: " + id +
+                ", nombre: " + getNombreCompleto() +
+                ", matricula: " + matricula;
     }
 }

@@ -88,7 +88,7 @@ public class Paciente {
         return domicilio;
     }
 
-    // Método toString para imprimir en consola la información del paciente
+    // toString para imprimir en consola la información del paciente
 
     public String toString() {
         return "Paciente: " + id +
