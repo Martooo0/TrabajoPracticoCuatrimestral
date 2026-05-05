@@ -14,8 +14,7 @@ public class Paciente {
 
     public Paciente() {}
 
-    public Paciente(Long id, String nombre, String apellido, String dni, String email, LocalDate fechaIngreso, Domicilio domicilio) { // Agregar Domicilio
-        this.id = id;
+    public Paciente(String nombre, String apellido, String dni, String email, LocalDate fechaIngreso, Domicilio domicilio) { // Agregar Domicilio
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
@@ -26,9 +25,7 @@ public class Paciente {
 
     // Métodos para modificación (set) de datos del paciente (incluido su domicilio).
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) { this.id = id; }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -93,7 +90,7 @@ public class Paciente {
     public String toString() {
         return "Paciente: " + id +
                 ", nombre: " + getNombreCompleto() +
-                ", dni: " + dni +
+                ", DNI: " + dni +
                 ", email: " + email +
                 ", fechaIngreso: " + fechaIngreso +
                 ". Domicilio: " + domicilio;

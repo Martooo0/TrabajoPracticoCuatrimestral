@@ -14,9 +14,7 @@ public class Turno {
 
     public Turno() {}
 
-    public Turno(Long id, Paciente paciente, Odontologo odontologo,
-                 LocalDate fecha, LocalTime hora) {
-        this.id = id;
+    public Turno(Paciente paciente, Odontologo odontologo, LocalDate fecha, LocalTime hora) {
         this.paciente = paciente;
         this.odontologo = odontologo;
         this.fecha = fecha;
@@ -26,9 +24,7 @@ public class Turno {
 
     // Métodos para modificación (set) de datos del Turno.
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public void setId(Long id) {this.id = id;}
 
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
@@ -76,24 +72,10 @@ public class Turno {
         return estado;
     }
 
-    // Aca usamos los métodos para mostrar el flujo que va a ir teniendo el turno
-
-    public void confirmar() {
-        this.estado = EstadoTurno.CONFIRMADO;
-    }
-
-    public void completar() {
-        this.estado = EstadoTurno.COMPLETADO;
-    }
-
-    public void cancelar() {
-        this.estado = EstadoTurno.CANCELADO;
-    }
-
     public String toString() {
         return "Turno: " + id +
                 ", paciente: " + paciente.getNombreCompleto() + // Solo traemos el nombre completo del Paciente
-                ", odontólogo: " + odontologo.getNombreCompleto() +
+                ", odontólogo: " + odontologo.getNombreCompleto()  + // Lo mismo aca con odontólogo
                 ", fecha del turno: " + fecha + ", " + hora + " hs" +
                 ". Estado: " + estado;
     }

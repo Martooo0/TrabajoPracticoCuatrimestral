@@ -1,6 +1,6 @@
 package modelo;
 
-public class Odontologo {
+public abstract class Odontologo {
     private Long id;
     private String nombre;
     private String apellido;
@@ -8,12 +8,17 @@ public class Odontologo {
 
     public Odontologo() {}
 
-    public Odontologo(Long id, String nombre, String apellido, String matricula) {
-        this.id = id;
+    public Odontologo(String nombre, String apellido, String matricula) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.matricula = matricula;
     }
+
+    // Polimorfismo!
+
+    public abstract Especialidad getEspecialidad();
+
+    public abstract int calcularDuracionTurno();
 
     // Métodos para modificación de datos del Odontólogo.
 
@@ -35,7 +40,7 @@ public class Odontologo {
 
     // Métodos para obtención de datos del Odontólogo.
 
-        public Long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -54,6 +59,8 @@ public class Odontologo {
     public String getNombreCompleto() {
         return nombre + " " + apellido;
     }
+
+    // Metodo para mostrar correcta y visualmente mejor al objeto
 
     public String toString() {
         return "Odontólogo: " + id +

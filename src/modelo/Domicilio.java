@@ -1,8 +1,10 @@
 package modelo;
 
+// Domicilio se usa por composición desde Paciente: su ciclo de vida está atado
+// al del paciente, así que no necesita un id propio (el del paciente alcanza
+// para identificarlo).
 public class Domicilio {
 
-    private Long id;
     private String calle;
     private String numero;
     private String localidad;
@@ -10,8 +12,7 @@ public class Domicilio {
 
     public Domicilio() {}
 
-    public Domicilio(Long id, String calle, String numero, String localidad, String provincia) {
-        this.id = id;
+    public Domicilio(String calle, String numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
         this.localidad = localidad;
@@ -22,10 +23,6 @@ public class Domicilio {
 
     public void setCalle(String calle) {
         this.calle = calle;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setNumero(String numero) {
@@ -41,10 +38,6 @@ public class Domicilio {
     }
 
     // Métodos para obtención (get) de datos del Domicilio.
-
-    public Long getId() {
-        return id;
-    }
 
     public String getCalle() {
         return calle;
@@ -65,6 +58,6 @@ public class Domicilio {
     // toString
 
     public String toString(){
-        return id + ", " + calle + ", altura: " + numero + ", en: " + localidad + ", " + provincia;
+        return calle + ", altura: " + numero + ", en: " + localidad + ", " + provincia;
     }
 }
